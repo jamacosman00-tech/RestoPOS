@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #0B132B;
+    --bg-surface: #1C2541;
+    --bg-card: rgba(15, 23, 42, 0.85);
+    --border-subtle: rgba(51, 65, 85, 0.7);
+  }
+
+  body {
+    background-color: #080d1a;
+    color: #e2e8f0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Custom dark scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b1120;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+
+  /* Remove default browser white number spinners */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  /* Dark select style */
+  select {
+    background-color: #0f172a;
+    color: #f1f5f9;
+  }
+  select option {
+    background-color: #0f172a;
+    color: #f1f5f9;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-4 py-2.5 rounded-xl transition-all duration-150 flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/40 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-emerald-600;
+  }
+  .btn-secondary {
+    @apply bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium px-4 py-2.5 rounded-xl transition-all duration-150 flex items-center justify-center gap-2 active:scale-[0.98] disabled:opacity-50;
+  }
+  .btn-danger {
+    @apply bg-red-600/90 hover:bg-red-500 text-white font-medium px-4 py-2.5 rounded-xl transition-all duration-150 flex items-center justify-center gap-2 shadow-lg shadow-red-950/40 active:scale-[0.98] disabled:opacity-50;
+  }
+  .btn-warning {
+    @apply bg-amber-600/90 hover:bg-amber-500 text-white font-medium px-4 py-2.5 rounded-xl transition-all duration-150 flex items-center justify-center gap-2 shadow-lg shadow-amber-950/40 active:scale-[0.98] disabled:opacity-50;
+  }
+  .btn-success {
+    @apply bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-4 py-2.5 rounded-xl transition-all duration-150 flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/40 active:scale-[0.98] disabled:opacity-50;
+  }
+
+  /* Form inputs */
+  .input-field {
+    @apply w-full bg-slate-900/90 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all;
+  }
+
+  /* Card */
+  .card {
+    @apply bg-slate-900/80 backdrop-blur-md rounded-2xl border border-slate-800/90 p-5 shadow-xl shadow-black/20;
+  }
+
+  /* Badges */
+  .badge-admin {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-xs font-semibold bg-amber-950/70 text-amber-300 border border-amber-500/30;
+  }
+  .badge-cashier {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-xs font-semibold bg-blue-950/70 text-blue-300 border border-blue-500/30;
+  }
+  .badge-active {
+    @apply inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-medium bg-emerald-950/70 text-emerald-300 border border-emerald-500/30;
+  }
+  .badge-inactive {
+    @apply inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-medium bg-red-950/70 text-red-300 border border-red-500/30;
+  }
+  
+  .badge-green {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-500/30;
+  }
+  .badge-yellow {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-950/80 text-amber-300 border border-amber-500/30;
+  }
+  .badge-red {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-950/80 text-red-300 border border-red-500/30;
+  }
+  .badge-blue {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-950/80 text-blue-300 border border-blue-500/30;
+  }
+  .badge-gray {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700;
+  }
+
+  /* Table */
+  .table-header {
+    @apply px-4 py-3.5 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider bg-slate-900/90 border-b border-slate-800;
+  }
+  .table-cell {
+    @apply px-4 py-3.5 text-sm text-slate-200;
+  }
+}
